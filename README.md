@@ -1,8 +1,10 @@
-<img width="2880" height="1527" alt="image" src="https://github.com/user-attachments/assets/da5b6564-32fa-4300-8be0-e22dadeff8df" />
-
 # 🧠 CodeManager — Automated Code Knowledge Base for AI and Developers V1.0
 
 CodeManager is a **Streamlit-based project management tool** that automatically observes any source code directory, tracks all file changes, and compiles two living artifacts that together act as a **machine-readable knowledge base** for your code.
+
+
+<img width="2440" height="1527" alt="image" src="https://github.com/user-attachments/assets/da5b6564-32fa-4300-8be0-e22dadeff8df" />
+
 
 ## 🔍 What It Does
 
