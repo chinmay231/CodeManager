@@ -1,0 +1,28 @@
+# --- Python Virtual Environment ---
+.venv/
+
+# --- Python Cache ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- System / IDE Files ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- Logs and Temp ---
+*.log
+*.tmp
+*.pkl
+*.bin
+
+# --- Optional: Streamlit local state ---
+
+
+# --- Ignore auto-generated outputs if not needed in Git ---
+
+
+
