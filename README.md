@@ -1,3 +1,4 @@
+<img width="2880" height="1527" alt="image" src="https://github.com/user-attachments/assets/da5b6564-32fa-4300-8be0-e22dadeff8df" />
 
 # 🧠 CodeManager — Automated Code Knowledge Base for AI and Developers V1.0
 
