@@ -1,106 +1,77 @@
-# 🧠 CodeManager — Automated Code Knowledge Base for AI and Developers  
-### Version 2.0 — Hybrid Tracking + Windows/WSL Path Support
 
-CodeManager V2 is a **Streamlit-based code knowledge management tool** that lets developers instantly convert an entire project (or selected files and folders) into two clean, machine-readable artifacts:
+# 🧠 CodeManager V2 — AI-Ready Code Knowledge Engine  
+**Hybrid Project Tracker | Unified CODEFILE Generator | Project Structure Mapping**
 
-1. **CODEFILE.txt** — concatenated source code with headers  
-2. **StructureLatest.md** — a Markdown tree of your project structure  
+<img width="2440" height="1527" alt="image" src="https://github.com/chinmay231/CodeManager/blob/main/image.png" />
+---
 
-These two outputs together form a **live knowledge pack** for LLMs, RAG pipelines, documentation systems, and code reasoning workflows.
+## 🚀 Overview
 
-## 🔍 What’s New in V2
+CodeManager V2 transforms any software project into a **machine-readable knowledge base**, optimized for AI models, RAG pipelines, debugging, documentation, and multi-file reasoning.
 
-V2 is a major upgrade from V1. Instead of a single-folder watcher, V2 introduces a powerful **Hybrid Tracking System**.
+With a single compile click, the system produces:
 
-### ✔ Hybrid Mode (Files + Folders Together)
-
-- Add absolute paths to individual files  
-- Add absolute paths to folder roots  
-- Apply extension filters  
-- Recursive or non-recursive folder scanning  
-- Combine everything in a single manifest  
-- Generate artifacts on demand  
+1. **`CODEFILE.txt`** — a unified snapshot of all tracked source files.  
+2. **`StructureLatest.md`** — a clean Markdown tree representing your folder structure.
 
 ---
 
-## 🚀 Major Improvements in V2
+## ✨ What’s New in V2
 
-### 1. Windows → WSL Path Normalization  
-Paste Windows paths like `C:\Users\You\file.py`, and CodeManager automatically converts them into WSL paths internally.
+### ✔ Hybrid Tracking (Files + Folders)
+Track individual files and entire folders with recursive scanning and extension filters.
 
-### 2. No Watchdog Needed  
-Click **Compile** whenever needed. No threads. No system hooks.
+### ✔ Automatic Path Normalization  
+Works with Windows, WSL, and Linux paths.
 
-### 3. Migration-Friendly Manifest  
-Auto-migrates old V1 manifests to V2 format.
+### ✔ Improved Manifest Engine  
+Stored in `.codemanager/manifest.json` with migration-safe handling.
 
-### 4. Reliable Artifact Generation  
-- Extension-filtered scanning  
-- Multi-root structure  
-- Large-file safety  
-- Deduplication  
+### ✔ Updated Streamlit UI  
+Dual-pane adders, previews, and better error handling.
 
 ---
 
-## 🧩 Components
+## 🧩 How It Works
 
-- **app.py** – Streamlit UI  
-- **file_ops.py** – Builds CODEFILE and StructureLatest  
-- **code_watcher.py** – Legacy from V1  
-- **manifest.json** – Hybrid tracking database  
+### 1. Add Paths  
+You can add files and folders with custom extension filters.
 
----
-
-## 📁 Outputs
-
-### CODEFILE.txt  
-All code merged into one file with labeled sections.
-
-### StructureLatest.md  
-Clean project tree view.
+### 2. Compile  
+Generates `CODEFILE.txt` and `StructureLatest.md`.
 
 ---
 
-## 💡 AI Use Case
+## 🤖 AI / RAG Integration
 
-Use as a “knowledge pack” for:
+Example with LangChain:
 
-- Local LLMs (Llama, Mistral, Gemma)  
-- ChatGPT-based refactoring  
-- RAG code understanding pipelines  
-- Documentation engines  
+```python
+from langchain.document_loaders import WebBaseLoader
+loader = WebBaseLoader("http://localhost/codebase/CODEFILE.txt")
+docs = loader.load()
+```
 
 ---
 
 ## 🌐 Hosting via Apache2
 
-Install:
-
 ```bash
 sudo apt update
 sudo apt install apache2 -y
+sudo ln -s /path/to/outputs /var/www/html/codebase
 ```
 
-Serve output folder:
-
-```bash
-sudo ln -s /path/to/output /var/www/html/codebase
-```
-
-Access:
-```
-http://localhost/codebase/CODEFILE.txt
-http://localhost/codebase/StructureLatest.md
-```
+Access:  
+`http://localhost/codebase/CODEFILE.txt`
 
 ---
 
-## ⚙️ Run Locally
+## ⚙️ Installation
 
 ```bash
 git clone https://github.com/chinmay231/CodeManager.git
-cd CodeManager
-git checkout v2
+cd CodeManager_V2
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -109,6 +80,7 @@ streamlit run app.py
 
 ---
 
-## 🧑‍💻 Author  
+## 👤 Author  
 **Chinmay Kapoor**  
-Data & AI Engineer | AI Systems Researcher
+AI Systems Researcher | Data Engineer
+
