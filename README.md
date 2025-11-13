@@ -67,7 +67,7 @@ Access:
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation  // I would recommend downloading the source package for the Latest Release (That way no version glitch exists)
 
 ```bash
 git clone https://github.com/chinmay231/CodeManager.git
