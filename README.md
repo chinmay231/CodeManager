@@ -1,84 +1,50 @@
-# 🧠 CodeManager — Automated Code Knowledge Base for AI and Developers V1.0
 
-CodeManager is a **Streamlit-based project management tool** that automatically observes any source code directory, tracks all file changes, and compiles two living artifacts that together act as a **machine-readable knowledge base** for your code.
-
+# 🧠 CodeManager V2 — AI-Ready Code Knowledge Engine  
+**Hybrid Project Tracker | Unified CODEFILE Generator | Project Structure Mapping**
 
 <img width="2440" height="1527" alt="image" src="https://github.com/chinmay231/CodeManager/blob/main/image.png" />
+---
 
+## 🚀 Overview
 
-## 🔍 What It Does
+CodeManager V2 transforms any software project into a **machine-readable knowledge base**, optimized for AI models, RAG pipelines, debugging, documentation, and multi-file reasoning.
 
-Whenever you edit or save any file in your project, CodeManager instantly rebuilds:
+With a single compile click, the system produces:
 
-1. **`CODEFILE.txt`**
-   A single concatenated file containing all source files (Python, Kotlin, Java, XML, Markdown, etc.) with clear headers.
-2. **`StructureLatest.md`**
-   A clean Markdown tree of your project structure.
+1. **`CODEFILE.txt`** — a unified snapshot of all tracked source files.  
+2. **`StructureLatest.md`** — a clean Markdown tree representing your folder structure.
 
-These two files represent your **project’s evolving knowledge state**. They can be used for local or cloud-based LLMs and RAG systems, continuous documentation, or codebase review.
+---
 
-## 🧩 System Components
+## ✨ What’s New in V2
 
-### `app.py`
-Streamlit UI for control and visualization of the directory watcher.
+### ✔ Hybrid Tracking (Files + Folders)
+Track individual files and entire folders with recursive scanning and extension filters.
 
-### `code_watcher.py`
-Uses watchdog to monitor file changes and trigger rebuilds.
+### ✔ Automatic Path Normalization  
+Works with Windows, WSL, and Linux paths.
 
-### `file_ops.py`
-Compiles code into CODEFILE.txt and folder tree into StructureLatest.md.
+### ✔ Improved Manifest Engine  
+Stored in `.codemanager/manifest.json` with migration-safe handling.
 
-### `.streamlit/config.toml`
-Maintains UI and server settings.
+### ✔ Updated Streamlit UI  
+Dual-pane adders, previews, and better error handling.
 
+---
 
-## What it Uses??
+## 🧩 How It Works
 
-The Code Manager Uses Streamlit, Regex and Watcher to ensure that you can interact with your edited code saved into one file as Knowledge and Structure of the folder which may also need tracking. This tracker is similar to github but made more customisable for the user. 
+### 1. Add Paths  
+You can add files and folders with custom extension filters.
 
+### 2. Compile  
+Generates `CODEFILE.txt` and `StructureLatest.md`.
 
-## 💡 Use Case: AI Knowledge Base
+---
 
-These generated files can serve as a **Knowledge Base** for:
-- Local LLMs (Llama, Mistral, Gemma, etc.) via RAG
-- ChatGPT or API-based tools for refactoring or reasoning
-- Automated documentation systems
-- Team knowledge sharing
+## 🤖 AI / RAG Integration
 
-Example flow:
-1. Developer codes → CodeManager updates CODEFILE.txt.
-2. Apache2 server hosts this file.
-3. LLM fetches it from HTTP endpoint for retrieval-augmented reasoning.
-
-## 🌐 Hosting via Apache2 Server
-
-### Install Apache2
-```bash
-sudo apt update
-sudo apt install apache2 -y
-```
-
-### Link the output folder
-```bash
-sudo ln -s /path/to/project /var/www/html/codebase
-```
-
-Access the files at:
-```
-http://localhost/codebase/CODEFILE.txt
-http://localhost/codebase/StructureLatest.md
-```
-
-### Check and start Apache
-```bash
-sudo systemctl status apache2
-sudo systemctl start apache2
-```
-
-Your AI or RAG pipeline can now access:
-`http://localhost/codebase/CODEFILE.txt`
-
-## 🧠 Integration Example (LangChain)
+Example with LangChain:
 
 ```python
 from langchain.document_loaders import WebBaseLoader
@@ -86,25 +52,35 @@ loader = WebBaseLoader("http://localhost/codebase/CODEFILE.txt")
 docs = loader.load()
 ```
 
-Now your AI has access to a live, auto-updated version of your source codebase.
+---
 
-## ⚙️ Run Locally
+## 🌐 Hosting via Apache2
+
+```bash
+sudo apt update
+sudo apt install apache2 -y
+sudo ln -s /path/to/outputs /var/www/html/codebase
+```
+
+Access:  
+`http://localhost/codebase/CODEFILE.txt`
+
+---
+
+## ⚙️ Installation
 
 ```bash
 git clone https://github.com/chinmay231/CodeManager.git
-cd CodeManager
+cd CodeManager_V2
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open http://localhost:8501 to use the app.
+---
 
-## 🧠 Concept Summary
-
-CodeManager bridges the gap between **software engineering** and **AI comprehension** by converting your live project into a structured, continuously refreshed knowledge base.
-
-## 🧑‍💻 Author
+## 👤 Author  
 **Chinmay Kapoor**  
-Data & AI Engineer | AI Systems Researcher
+AI Systems Researcher | Data Engineer
+
