@@ -1,0 +1,25 @@
+# Virtual env
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS / IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+*.tmp
+
+# Streamlit cache (optional)
+.streamlit/cache/
+
+# CodeManager artifacts
+CODEFILE.txt
+StructureLatest.md
+.codemanager/
